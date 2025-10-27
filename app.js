@@ -55,11 +55,6 @@ async function cargar() {
     render();
     if (typeof initTree === 'function') initTree(rawData);
 
-  } catch (err) {
-    console.error('Error cargando JSON:', err);
-    listaEl.innerHTML = `<li class="muted">Error cargando catálogo: ${err.message}</li>`;
-  }
-}
 
 // === RENDER LISTA ===
 function render() {
@@ -250,3 +245,4 @@ btnClearCat.addEventListener('click', () => {
 // === INIT ===
 
 document.addEventListener('DOMContentLoaded', cargar);
+
