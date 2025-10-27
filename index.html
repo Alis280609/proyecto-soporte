@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca Local — Inicio</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---- NUEVOS ESTILOS ---- */
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background-color: #fafafa;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 0.8rem 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 1rem;
+    }
+
+    .site-title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c7d2fe;
+    }
+
+    /* --- Botón de inicio de sesión --- */
+    .login-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* --- Hero con imagen principal --- */
+    .hero-image {
+      position: relative;
+      background-image: url("libreria.jpg"); /* ← Aquí va tu imagen */
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 1rem;
+    }
+
+    .hero-text h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* --- Tarjetas de promoción --- */
+    .promo-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .promo-card {
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .promo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 3px solid #e0e0e0;
+    }
+
+    /* --- Nueva sección de recomendaciones --- */
+    .recomendaciones {
+      margin-top: 3rem;
+    }
+
+    .reco-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .reco-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .reco-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .reco-card h3 {
+      margin-top: 0.5rem;
+    }
+
+    /* --- Formulario del pie --- */
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1e3a8a;
+      color: #eee;
+    }
+
+    footer form {
+      margin-top: 1rem;
+    }
+
+    footer input[type="email"] {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      width: 250px;
+      margin-right: 0.5rem;
+    }
+
+    footer button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    footer button:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">📚 Biblioteca Local</h1>
+
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul id="menu" class="nav menu-desplegable">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="acerca.html">Acerca del local</a></li>
+        </ul>
+      </nav>
+
+      <button class="login-btn" onclick="window.location.href='login.html'">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <!-- Imagen principal -->
+  <section class="hero-image">
+    <div class="hero-text">
+      <h1>Bienvenido a la Biblioteca Local</h1>
+      <h4>Donde cada libro abre una puerta al conocimiento y la imaginación.</h4>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Promociones -->
+    <section class="panel promociones">
+      <h2>Promociones del mes</h2>
+      <div class="promo-grid">
+        <article class="promo-card fade-in">
+          <img src="promo1.jpg" alt="Promoción libros juveniles">
+          <h3>Semana Juvenil</h3>
+          <p>20% de descuento en libros de aventura y fantasía.</p>
+        </article>
+
+        <article class="promo-card fade-in">
+          <img src="promo2.jpg" alt="Promoción libros de historia">
+          <h3>Historias que inspiran</h3>
+          <p>Compra dos libros de historia y llévate el tercero gratis.</p>
+        </article>
+
+        <article class="promo-card fade-in">
+          <img src="promo3.jpg" alt="Promoción libros de ciencia ficción">
+          <h3>Mes de la Ciencia Ficción</h3>
+          <p>Explora nuevos mundos con descuentos especiales.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Recomendaciones -->
+    <section class="panel recomendaciones">
+      <h2>Recomendaciones de lectura</h2>
+      <div class="reco-grid">
+        <article class="reco-card">
+          <h3>“Cien años de soledad” — Gabriel García Márquez</h3>
+          <p>Una obra maestra de la literatura latinoamericana llena de realismo mágico.</p>
+        </article>
+
+        <article class="reco-card">
+          <h3>“El principito” — Antoine de Saint-Exupéry</h3>
+          <p>Un clásico que invita a ver el mundo con los ojos de la imaginación.</p>
+        </article>
+
+        <article class="reco-card">
+          <h3>“1984” — George Orwell</h3>
+          <p>Una historia profunda sobre la libertad, el control y el pensamiento crítico.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+ <footer class="site-footer">
+  <div class="container footer-inner">
+    <small>© 2025 Biblioteca Local — Todos los derechos reservados</small>
+    <form id="suscripcionForm">
+      <label for="correo">Suscríbete al boletín:</label><br>
+      <input type="email" id="correo" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirme</button>
+    </form>
+    <p id="mensajeSuscripcion" style="margin-top:1rem; color: #4ade80; font-weight:600;"></p>
+  </div>
+</footer>
+
+
+  <script>
+    // --- Animación JS: aparición suave al hacer scroll ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('fade-in');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+<script>
+  const form = document.getElementById("suscripcionForm");
+  const mensaje = document.getElementById("mensajeSuscripcion");
+
+  // Revisar si ya está suscrito
+  if (localStorage.getItem("suscrito")) {
+    mensaje.textContent = "¡Ya estás suscrito!";
+    form.style.display = "none";
+  }
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const correo = document.getElementById("correo").value.trim();
+    if (correo === "") {
+      alert("Por favor, ingresa tu correo.");
+      return;
+    }
+
+    // Guardar que el usuario ya se suscribió
+    localStorage.setItem("suscrito", true);
+
+    // Mostrar mensaje y ocultar formulario
+    mensaje.textContent = "¡Ya estás suscrito!";
+    form.style.display = "none";
+  });
+</script>
+
+
+</body>
+</html>

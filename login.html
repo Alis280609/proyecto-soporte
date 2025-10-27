@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iniciar Sesión — Biblioteca Local</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .login-container h1 {
+      font-family: "Poppins", sans-serif;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+
+    .login-container p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+    }
+
+    .login-container button:hover {
+      background-color: #2563eb;
+    }
+
+    .login-container a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #1e3a8a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsivo */
+    @media (max-width: 480px) {
+      .login-container {
+        margin: 1rem;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Iniciar Sesión</h1>
+    <p>Bienvenido a la Biblioteca Local</p>
+
+    <form id="loginForm">
+      <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+      <input type="password" id="clave" name="clave" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <a href="registro.html">¿No tienes una cuenta? Regístrate</a>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // evita que recargue la página
+
+      const usuario = document.getElementById("usuario").value.trim();
+      const clave = document.getElementById("clave").value.trim();
+
+      if (usuario === "" || clave === "") {
+        alert("Por favor, completa todos los campos.");
+        return;
+      }
+
+      // Simula un inicio de sesión exitoso (puedes cambiar esto más adelante)
+      alert("¡Bienvenido, " + usuario + "! Iniciando sesión...");
+      window.location.href = "index.html"; // Redirige a la página principal
+    });
+  </script>
+</body>
+</html>

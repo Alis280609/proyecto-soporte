@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Libros — Biblioteca Local</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="style.css">
+  <!doctype html>
+<html lang="es">
+  <style>
+     /* --- Botón de inicio de sesión --- */
+    .login-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #2563eb;
+    }
+
+  </style>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Libros — Biblioteca Local</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">📚 Biblioteca Local</h1>
+
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul id="menu" class="nav menu-desplegable">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="acerca.html">Acerca del local</a></li>
+        </ul>
+      </nav>
+
+      <button class="login-btn" onclick="window.location.href='login.html'">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <!-- === CONTENIDO PRINCIPAL === -->
+  <main class="container grid">
+    <section class="panel panel-catalogo">
+      <h2>Catálogo de libros</h2>
+      <h4>Explora los títulos disponibles. Usa la búsqueda o el menú lateral para explorar categorías.</h4>
+
+      <div class="panel-head">
+        <input id="filtro" type="search" placeholder="Buscar libro...">
+        <select id="orden" aria-label="Ordenar">
+          <option value="az">A–Z</option>
+          <option value="za">Z–A</option>
+          <option value="precio-asc">Precio ↑</option>
+          <option value="precio-desc">Precio ↓</option>
+        </select>
+      </div>
+
+      <ul id="lista" class="lista" aria-live="polite"></ul>
+    </section>
+
+    <!-- Carrito lateral -->
+    <aside id="carrito" class="carrito">
+      <h3>🛒 Carrito de compras</h3>
+      <ul id="listaCarrito"></ul>
+      <p><strong>Total:</strong> ₡<span id="total">0.00</span></p>
+      <button id="btnVaciar" class="btn-outline">Vaciar carrito</button>
+
+      <h3 style="margin-top:2rem">Árbol de categorías</h3>
+      <ul id="tree" class="tree" role="tree"></ul>
+      <button id="btnClearCat" class="btn-link" type="button">Quitar filtro de categoría</button>
+    </aside>
+
+    <!-- Panel de detalle -->
+    <div id="detalle" class="detalle" hidden>
+      <button id="close-detalle" class="close">✕</button>
+      <img id="detalle-img" src="" alt="Portada del libro">
+      <h3 id="detalle-titulo"></h3>
+      <p id="detalle-autor" class="muted"></p>
+      <p id="detalle-desc"></p>
+      <p id="detalle-precio" class="price"></p>
+      <div id="detalle-tags" class="tags"></div>
+    </div>
+  </main>
+
+  <!-- === PIE DE PÁGINA === -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2025 Biblioteca Local</small>
+    </div>
+  </footer>
+
+  <!-- Scripts (importante: datos.js antes de app.js) -->
+     <script src="/tree.js"></script>
+    <script src="datos.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+  <!-- Scripts (importante: datos.js antes de app.js) -->
+     <script src="js/tree.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

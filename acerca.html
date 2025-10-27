@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acerca del Local — Biblioteca Local</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Hero superior */
+    .hero-image {
+      position: relative;
+      background-image: url("libreria.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 1rem;
+    }
+
+    .hero-text h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+
+    .panel {
+      background: #fff;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .panel h2, .panel h3 {
+      font-family: "Poppins", sans-serif;
+      color: #1e3a8a;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    table th, table td {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    /* Botón de inicio de sesión */
+    .login-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* === Formulario de comentarios === */
+    .comentarios {
+      background: var(--clr-light);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .comentarios h2 {
+      color: var(--clr-primary);
+      margin-bottom: 1rem;
+    }
+
+    .comentarios form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .comentarios input, .comentarios textarea {
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      resize: none;
+    }
+
+    .comentarios textarea {
+      min-height: 120px;
+    }
+
+    .comentarios button {
+      align-self: flex-start;
+      background: var(--clr-accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .comentarios button:hover {
+      background: var(--clr-accent-dark);
+    }
+
+    /* === Toast (notificación emergente) === */
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--clr-accent-dark);
+      color: #fff;
+      padding: 1rem 1.4rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 1000;
+      font-weight: 500;
+    }
+
+    .toast.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">📚 Biblioteca Local</h1>
+
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul id="menu" class="nav menu-desplegable">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="acerca.html" class="active">Acerca del local</a></li>
+        </ul>
+      </nav>
+
+      <button class="login-btn" onclick="window.location.href='login.html'">Iniciar sesión</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-image fade-in">
+    <div class="hero-text">
+      <h1>Acerca de Nuestra Biblioteca</h1>
+      <h4>Un espacio dedicado al conocimiento, la cultura y la comunidad en Costa Rica.</h4>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="panel fade-in">
+      <h2>Misión</h2>
+      <p>Fomentar la lectura y el aprendizaje, ofreciendo acceso a una amplia variedad de libros y actividades culturales, en un espacio acogedor y educativo para toda la comunidad.</p>
+    </section>
+
+    <section class="panel fade-in">
+      <h2>Visión</h2>
+      <p>Ser la biblioteca líder en Costa Rica en innovación, cultura y educación, promoviendo la inclusión y el amor por el conocimiento en todas las edades.</p>
+    </section>
+
+    <section class="panel fade-in">
+      <h2>Información del Local</h2>
+      <p><strong>Año de fundación:</strong> 2010</p>
+      <p><strong>Antigüedad:</strong> <span id="edadLocal"></span> años de experiencia ofreciendo servicios de calidad.</p>
+      <p><strong>Sucursales:</strong> 3</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Ciudad</th>
+            <th>Dirección</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>San José</td><td>Avenida Central 123</td></tr>
+          <tr><td>Alajuela</td><td>Calle 5, Barrio Los Ángeles</td></tr>
+          <tr><td>Heredia</td><td>Centro Comercial Heredia, Local 12</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Contacto</h3>
+      <ul>
+        <li>📍 Dirección: Calle Central, Cañas</li>
+        <li>📞 Teléfono: 2680-0000</li>
+        <li>📧 Correo: info@bibliotecalocal.cr</li>
+      </ul>
+    </section>
+
+    <!-- 📝 Nueva sección de comentarios -->
+    <section class="comentarios fade-in">
+      <h2>Déjanos tu comentario</h2>
+      <form id="formComentario">
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <textarea id="mensaje" placeholder="Escribe tu comentario aquí..." required></textarea>
+        <button type="submit">Enviar comentario</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© 2025 Biblioteca Local — Todos los derechos reservados</small>
+    </div>
+  </footer>
+
+  <!-- Notificación (toast) -->
+  <div id="toast" class="toast">✅ ¡Tu comentario ha sido enviado!</div>
+
+  <script>
+    // Animación de aparición
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('fade-in');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Calcular años de existencia
+    const añoFundacion = 2010;
+    const añoActual = new Date().getFullYear();
+    document.getElementById("edadLocal").textContent = añoActual - añoFundacion;
+
+    // --- Lógica de envío de comentarios ---
+    const form = document.getElementById("formComentario");
+    const toast = document.getElementById("toast");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      form.reset();
+      toast.classList.add("visible");
+      setTimeout(() => toast.classList.remove("visible"), 3000);
+    });
+  </script>
+</body>
+</html>
