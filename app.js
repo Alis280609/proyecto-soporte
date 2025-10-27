@@ -44,12 +44,7 @@ async function cargar() {
     if (location.protocol === 'file:' && window.CATALOGO) {
       rawData = window.CATALOGO;
     } else {
-      // Si algún día lo sirves con server, esto seguirá funcionando:
-      const res = await fetch('data/datos.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error(`HTTP ${res.status} al cargar datos.json`);
-      rawData = await res.json();
-    }
-
+  
     // Aplanar categorías/subcategorías/items
     items = rawData.categorias.flatMap(cat =>
       cat.subcategorias.flatMap(sub =>
@@ -253,4 +248,5 @@ btnClearCat.addEventListener('click', () => {
 });
 
 // === INIT ===
+
 document.addEventListener('DOMContentLoaded', cargar);
